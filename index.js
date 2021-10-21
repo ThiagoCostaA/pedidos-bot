@@ -6,7 +6,7 @@ const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/', (req, res) => {
-    res.send("Olá chatbot");
+    res.send("Olá cópia do projeto");
 });
 
 app.get('/pergunta', (req, res) => {
