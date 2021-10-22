@@ -25,16 +25,18 @@ app.post('/webhook', (req, res) => {
     console.log("intenção", intencao);
 
     const resposta  = {
-        "fulfilmentText": "Resposta do Webhook",
-        "fulfillmentMessages": [
-            {
-                "text": [
-                    "Eu sou webhook, o que achou?"
-                ],
-            }
-        ],
-        "source": "",
-    }
+    "fulfillmentText": "Resposta do Webhook",
+    "fulfillmentMessages": [
+      {
+        "text": {
+          "text": [
+            "Eu sou um webhook, o que achou?"
+          ]
+        }
+      }
+    ],
+    "source": "",
+  }
 
     res.send(resposta);
 })
