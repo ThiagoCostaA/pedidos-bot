@@ -14,7 +14,7 @@ app.post('/webhook', (req, res) => {
     console.log("Cheguei no webhook");
 
     const mensagem = req.body.queryResult.queryText;
-    const intencao = req.body.queryResult.displayName;
+    const intencao = req.body.queryResult.intent.displayName;
 
     if(req.body.queryResult.parameters && req.body.queryResult.parameters.nao_vendemos){
         const responder = "Puxa, nós não vendemos " + req.body.queryResult.parameters.nao_vendemos;
