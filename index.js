@@ -41,6 +41,6 @@ const porta = process.env.PORT || 3000;
 const hostname = "127.0.0.1"
 
 
-app.listen(porta, hostname, () => {
+app.listen(porta, () => {
     console.log(`Servidor rodando em http://${hostname}:${porta}`);
 })
