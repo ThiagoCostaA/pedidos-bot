@@ -1,13 +1,41 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+
 const app = express();
 
-
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-    res.send("Olá cópia do projeto");
+    res.send("Olá Chatbot");
 });
+
+app.post('/webhook', (req, res) => {
+    console.log("Cheguei no webhook");
+    
+    console.log("body", req.body.queryResult);
+})
+
+const porta = process.env.PORT || 3000;
+const hostname = "127.0.0.1"
+
+
+app.listen(porta, () => {
+    console.log(`Servidor rodando em http://${hostname}:${porta}`);
+})
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 
 app.get('/pergunta', (req, res) => {
     msg = req.query.pergunta;
@@ -36,11 +64,4 @@ app.post('/pedido', (req, res) => {
 
     res.json(pedido);
 })
-
-const porta = process.env.PORT || 3000;
-const hostname = "127.0.0.1"
-
-
-app.listen(porta, () => {
-    console.log(`Servidor rodando em http://${hostname}:${porta}`);
-})
+*/
